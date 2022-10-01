@@ -2,7 +2,7 @@
 
 A simple mod to enable/disable sqore (score) submissions in the menu
 
-Q: Does this mod actually work?
+Q: Does this mod actually work? 
 A: Yesn't
 
 It works, kinda, but is very... VERY buggy. I would not recommend trying to compile this mod.
