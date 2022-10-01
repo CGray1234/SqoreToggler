@@ -32,12 +32,12 @@ MAKE_AUTO_HOOK_MATCH(MenuToggle, &GlobalNamespace::StandardLevelDetailView::Refr
         canvasTransform->SetParent(parent, false);
         canvasTransform->set_localScale({1, 1, 1});
         canvasTransform->set_sizeDelta({10, 10});
-        canvasTransform->set_anchoredPosition({0, 0});
+        canvasTransform->set_anchoredPosition({10, 0});
         canvasTransform->SetAsLastSibling();
         auto canvasLayout = canvas->AddComponent<UnityEngine::UI::LayoutElement*>();
         canvasLayout->set_preferredWidth(10);
 
-        auto Toggle = CreateToggle(canvasTransform, "Scores Enabled", getModConfig().ScoresEnabled.GetValue(), 
+        auto Toggle = CreateToggle(canvasTransform, "", getModConfig().ScoresEnabled.GetValue(), UnityEngine::Vector2(10.0f, 0.0f),
             [=](bool value) {
                 getModConfig().ScoresEnabled.SetValue(value);
 
