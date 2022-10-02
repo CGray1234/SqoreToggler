@@ -2,14 +2,6 @@
 
 A simple mod to enable/disable sqore (score) submissions in the menu
 
-------------------------------------------------------------------------------------------
-
-Q: Does this mod actually work? 
-
-A: It works, kinda, but is very... VERY buggy. I would not recommend trying to compile this mod.
-
-------------------------------------------------------------------------------------------
-
 ## Credits
 
 * [zoller27osu](https://github.com/zoller27osu), [Sc2ad](https://github.com/Sc2ad) and [jakibaki](https://github.com/jakibaki) - [beatsaber-hook](https://github.com/sc2ad/beatsaber-hook)
