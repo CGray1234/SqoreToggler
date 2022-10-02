@@ -3,7 +3,7 @@
 	"name": "Sqore Disabler",
 	"id": "SqoreDisabler",
 	"author": "CGray1234",
-	"version": "0.1.0",
+	"version": "0.1.1-TesterVersion",
 	"packageId": "com.beatgames.beatsaber",
 	"packageVersion": "1.24.0",
 	"description": "A simple mod to enable/disable sqore (score) submissions in the menu",
