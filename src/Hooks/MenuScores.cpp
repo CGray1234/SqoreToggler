@@ -10,8 +10,6 @@
 
 using namespace QuestUI::BeatSaberUI;
 
-static ModInfo modInfo;
-
 MAKE_AUTO_HOOK_MATCH(MenuToggle, &GlobalNamespace::StandardLevelDetailView::RefreshContent, void, GlobalNamespace::StandardLevelDetailView *self) {
 
     MenuToggle(self);
