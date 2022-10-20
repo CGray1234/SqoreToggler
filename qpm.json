@@ -4,7 +4,7 @@
   "info": {
     "name": "Sqore Disabler",
     "id": "SqoreDisabler",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "url": null,
     "additionalData": {
       "overrideSoName": "libSqoreDisabler.so"
@@ -32,7 +32,7 @@
     },
     {
       "id": "codegen",
-      "versionRange": "^0.26.2",
+      "versionRange": "^0.28.0",
       "additionalData": {}
     },
     {
@@ -42,12 +42,12 @@
     },
     {
       "id": "questui",
-      "versionRange": "^0.16.7",
+      "versionRange": "^0.17.4",
       "additionalData": {}
     },
     {
       "id": "bs-utils",
-      "versionRange": "^0.7.1",
+      "versionRange": "^0.7.2",
       "additionalData": {}
     }
   ],

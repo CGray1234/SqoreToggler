@@ -3,6 +3,8 @@
 #include "questui/shared/BeatSaberUI.hpp"
 #include "questui/shared/QuestUI.hpp"
 
+#include "UnityEngine/UI/Toggle.hpp"
+#include "UnityEngine/UI/ToggleGroup.hpp"
 #include "UnityEngine/Resources.hpp"
 #include "GlobalNamespace/MenuTransitionsHelper.hpp"
 
@@ -17,13 +19,8 @@ void SqoreViewController::DidActivate(bool firstActivation, bool addedToHierarch
 
         UnityEngine::GameObject *container = CreateScrollView(get_transform());
 
-        auto scoreToggle = CreateToggle(container->get_transform(), "Enable/disable scores (don't use this toggle, use the other one please. I'll be removing this soon)", getModConfig().ScoresEnabled.GetValue(), 
-            [=](bool value) {
-                getModConfig().ScoresEnabled.SetValue(value);
-
-                getModConfig().RestartRequired.SetValue(true);
-            }
-        );
+        CreateText(container->get_transform(), "Yeah there's nothing much here...");
+        
     }
 }
 
