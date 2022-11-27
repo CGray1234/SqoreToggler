@@ -3,54 +3,50 @@
 #include "main.hpp"
 
 #include "GlobalNamespace/StandardLevelDetailView.hpp"
-#include "UnityEngine/UI/Button.hpp"
+#include "GlobalNamespace/PlatformLeaderboardViewController.hpp"
+#include "GlobalNamespace/LevelSelectionNavigationController.hpp"
+#include "UnityEngine/UI/Toggle.hpp"
 #include "bs-utils/shared/utils.hpp"
 #include "questui/shared/BeatSaberUI.hpp"
 #include "questui/shared/QuestUI.hpp"
 
 using namespace QuestUI::BeatSaberUI;
 
-MAKE_AUTO_HOOK_MATCH(MenuToggle, &GlobalNamespace::StandardLevelDetailView::RefreshContent, void, GlobalNamespace::StandardLevelDetailView *self) {
+UnityEngine::UI::Toggle *toggle;
 
-    MenuToggle(self);
+MAKE_AUTO_HOOK_MATCH(SetSubmissions, &GlobalNamespace::StandardLevelDetailView::RefreshContent, void, GlobalNamespace::StandardLevelDetailView *self) {
 
-    getLogger().info("Building Button & Score Status");
+    SetSubmissions(self);
 
-    static ConstString canvasName("ScoreToggleCanvas");
-        
-    auto parent = self->actionButton->get_transform()->GetParent();
-        
-    auto canvasTransform = (UnityEngine::RectTransform*) parent->Find(canvasName);
+    if (getModConfig().ScoresEnabled.GetValue() == true) {
+        bs_utils::Submission::enable(modInfo);
 
-    if(!canvasTransform) {
-        getLogger().info("Making canvas");
-        UnityEngine::GameObject* canvas = QuestUI::BeatSaberUI::CreateCanvas();
-        canvasTransform = (UnityEngine::RectTransform*) canvas->get_transform();
-        canvasTransform->set_name(canvasName);
-        canvasTransform->SetParent(parent, false);
-        canvasTransform->set_localScale({1, 1, 1});
-        canvasTransform->set_sizeDelta({10, 10});
-        canvasTransform->set_anchoredPosition({0, 0});
-        canvasTransform->SetAsLastSibling();
-        auto canvasLayout = canvas->AddComponent<UnityEngine::UI::LayoutElement*>();
-        canvasLayout->set_preferredWidth(10);
+        getLogger().info("Enabled Score Submission");
+    } else {
+        bs_utils::Submission::disable(modInfo);
 
-        auto Toggle = CreateToggle(canvasTransform, "", getModConfig().ScoresEnabled.GetValue(), UnityEngine::Vector2(8.0f, 0.0f),
+        getLogger().info("Disabled Score Submission");
+    }
+}
+
+
+MAKE_AUTO_HOOK_MATCH(MakeToggle, &GlobalNamespace::PlatformLeaderboardViewController::DidActivate, void, GlobalNamespace::PlatformLeaderboardViewController *self, bool firstActivation, bool addedToHierarchy, bool screenSystemEnabling) {
+    MakeToggle(self, firstActivation, addedToHierarchy, screenSystemEnabling);
+
+    if (firstActivation)
+    {
+        toggle = CreateToggle(self->get_transform(), "", getModConfig().ScoresEnabled.GetValue(), UnityEngine::Vector2(-90.0f, -60.0f),
             [=](bool value) {
                 getModConfig().ScoresEnabled.SetValue(value);
 
-                if (getModConfig().ScoresEnabled.GetValue() == true) {
-                    bs_utils::Submission::enable(modInfo);
-
-                    getLogger().info("Enabled Score Submission");
-                } else {
+                if (value == false) {
                     bs_utils::Submission::disable(modInfo);
-
-                    getLogger().info("Disabled Score Submission");
-                 }
+                } else {
+                    bs_utils::Submission::enable(modInfo);
+                }
             }
         );
 
-        AddHoverHint(Toggle, "Score Submission");
+        AddHoverHint(toggle->get_gameObject(), "Score Submissions");
     }
 }

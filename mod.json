@@ -1,7 +1,7 @@
 {
 	"_QPVersion": "0.1.1",
-	"name": "Sqore Disabler",
-	"id": "SqoreDisabler",
+	"name": "Sqore Toggler",
+	"id": "SqoreToggler",
 	"author": "CGray1234",
 	"version": "0.2.0",
 	"packageId": "com.beatgames.beatsaber",
@@ -15,7 +15,7 @@
 		  }
 	],
 	"modFiles": [
-		"libSqoreDisabler.so"
+		"libSqoreToggler.so"
 	],
 	"libraryFiles": [
 		"libbeatsaber-hook_3_14_0.so"

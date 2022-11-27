@@ -2,12 +2,12 @@
   "sharedDir": "shared",
   "dependenciesDir": "extern",
   "info": {
-    "name": "Sqore Disabler",
-    "id": "SqoreDisabler",
+    "name": "Sqore Toggler",
+    "id": "SqoreToggler",
     "version": "0.2.0",
     "url": null,
     "additionalData": {
-      "overrideSoName": "libSqoreDisabler.so"
+      "overrideSoName": "libSqoreToggler.so"
     }
   },
   "dependencies": [
