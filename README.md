@@ -1,4 +1,4 @@
-# Sqore Disabler
+# Sqore Toggler
 
 A simple mod to enable/disable sqore (score) submissions in the menu
 
