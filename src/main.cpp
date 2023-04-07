@@ -5,8 +5,6 @@
 
 ModInfo modInfo; // Stores the ID and version of our mod, and is sent to the modloader upon startup
 
-DEFINE_CONFIG(ModConfig);
-
 // Loads the config from disk using our modInfo, then returns it for use
 Configuration& getConfig() {
     static Configuration config(modInfo);
