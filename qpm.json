@@ -32,7 +32,11 @@
     },
     {
       "id": "codegen",
+<<<<<<< Updated upstream
       "versionRange": "^0.28.0",
+=======
+      "versionRange": "^0.33.0",
+>>>>>>> Stashed changes
       "additionalData": {}
     },
     {
@@ -42,7 +46,11 @@
     },
     {
       "id": "questui",
+<<<<<<< Updated upstream
       "versionRange": "^0.17.4",
+=======
+      "versionRange": "^0.17.11",
+>>>>>>> Stashed changes
       "additionalData": {}
     },
     {
