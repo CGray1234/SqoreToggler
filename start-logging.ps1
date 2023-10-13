@@ -47,7 +47,7 @@ if ($all -eq $false) {
 }
 
 if ($self -eq $true) {
-    $command += " | Select-String -pattern `"(SqoreDisabler|AndroidRuntime|CRASH)`""
+    $command += " | Select-String -pattern `"(SqoreToggler|AndroidRuntime|CRASH)`""
 } elseif ($custom -ne "") {
     $pattern = "(" + $custom + "|AndriodRuntime|CRASH)"
     $command += " | Select-String -pattern `"$pattern`""

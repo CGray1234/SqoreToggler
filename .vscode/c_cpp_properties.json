@@ -2,7 +2,7 @@
   "configurations": [
     {
       "defines": [
-        "ID=\"SqoreDisabler\"",
+        "ID=\"SqoreToggler\"",
         "VERSION=\"0.1.0\"",
         "__GNUC__",
         "__aarch64__"

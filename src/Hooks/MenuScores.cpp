@@ -40,38 +40,38 @@ MAKE_AUTO_HOOK_MATCH(MakeToggle, &GlobalNamespace::PlatformLeaderboardViewContro
 
     if (firstActivation)
     {
-        submissionText = CreateText(self->get_transform(), "[Error]:\nCould not get submission status", UnityEngine::Vector2(-42.0f, -31.5f));
-        submissionText->set_alignment(TMPro::TextAlignmentOptions::Center);
+        submissionText = CreateText(self->get_transform(), "[Error]:\nCould not get submission status", UnityEngine::Vector2(-41.0f, -43.5f));
+        submissionText->set_alignment(TMPro::TextAlignmentOptions::Top);
         submissionText->set_fontSize(3.25);
         submissionText->set_color(UnityEngine::Color::get_red());
         if (getModConfig().ScoresEnabled.GetValue() == false) {
-            submissionText->set_text("Score Submissions:\nDisabled (by SqoreToggler)");
+            submissionText->set_text("Scores Disabled");
             submissionText->set_color(UnityEngine::Color::get_red());
         } else {
             if (bs_utils::Submission::getEnabled() == false) {
-                submissionText->set_text("Score Submissions:\nDisabled (by external mod)");
+                submissionText->set_text("Scores Disabled\n(by external mod)");
                 submissionText->set_color(UnityEngine::Color::get_yellow());
             } else {
-                submissionText->set_text("Score Submissions:\nEnabled");
+                submissionText->set_text("Scores Enabled");
                 submissionText->set_color(UnityEngine::Color::get_green());
             }
         }
 
-        toggle = CreateToggle(self->get_transform(), "", getModConfig().ScoresEnabled.GetValue(), UnityEngine::Vector2(-90.0f, -60.0f),
+        toggle = CreateToggle(self->get_transform(), "", getModConfig().ScoresEnabled.GetValue(), UnityEngine::Vector2(-90.0f, -72.5f),
             [=](bool value) {
                 getModConfig().ScoresEnabled.SetValue(value);
 
                 if (value == false) {
                     bs_utils::Submission::disable(modInfo);
-                    submissionText->set_text("Score Submissions:\nDisabled (by SqoreToggler)");
+                    submissionText->set_text("Scores Disabled");
                     submissionText->set_color(UnityEngine::Color::get_red());
                 } else {
                     bs_utils::Submission::enable(modInfo);
                     if (bs_utils::Submission::getEnabled() == false) {
-                        submissionText->set_text("Score Submissions:\nDisabled (by external mod)");
+                        submissionText->set_text("Scores Disabled\n(by external mod)");
                         submissionText->set_color(UnityEngine::Color::get_yellow());
                     } else {
-                        submissionText->set_text("Score Submissions:\nEnabled");
+                        submissionText->set_text("Scores Enabled");
                         submissionText->set_color(UnityEngine::Color::get_green());
                     }
                 }
