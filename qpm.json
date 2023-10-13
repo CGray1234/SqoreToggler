@@ -4,7 +4,7 @@
   "info": {
     "name": "Sqore Toggler",
     "id": "SqoreToggler",
-    "version": "0.5.0",
+    "version": "0.4.1",
     "url": null,
     "additionalData": {
       "overrideSoName": "libSqoreToggler.so"
