@@ -3,6 +3,8 @@
 #include "config.hpp"
 #include "questui/shared/QuestUI.hpp"
 
+#include "UI/ViewController.hpp"
+
 ModInfo modInfo; // Stores the ID and version of our mod, and is sent to the modloader upon startup
 
 // Loads the config from disk using our modInfo, then returns it for use
@@ -35,6 +37,11 @@ extern "C" void load() {
     getLogger().info("Installing Config...");
     getModConfig().Init(modInfo);
     getLogger().info("Installed Config!");
+
+    getLogger().info("Installing SqoreToggler UI...");
+    QuestUI::Init();
+    QuestUI::Register::RegisterAllModSettingsViewController<Sqores::SqoreViewController*>(modInfo, "Sqore Toggler");
+    getLogger().info("Installed SqoreToggler UI!");
 
     getLogger().info("Installing hooks...");
     
