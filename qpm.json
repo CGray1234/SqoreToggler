@@ -7,13 +7,40 @@
     "version": "0.5.0",
     "url": null,
     "additionalData": {
-      "overrideSoName": "libSqoreToggler.so"
+      "overrideSoName": "libSqoreToggler.so",
+      "cmake": true
+    }
+  },
+  "workspace": {
+    "scripts": {
+      "build": [
+        "pwsh ./scripts/build.ps1"
+      ],
+      "copy": [
+        "pwsh ./scripts/copy.ps1"
+      ],
+      "logcat": [
+        "pwsh ./scripts/start-logging.ps1"
+      ],
+      "qmod": [
+        "pwsh ./scripts/build.ps1",
+        "pwsh ./scripts/createqmod.ps1"
+      ],
+      "restart": [
+        "pwsh ./scripts/restart-game.ps1"
+      ],
+      "stack": [
+        "pwsh ./scripts/ndk-stack.ps1"
+      ],
+      "tomb": [
+        "pwsh ./scripts/pull-tombstone.ps1"
+      ]
     }
   },
   "dependencies": [
     {
       "id": "beatsaber-hook",
-      "versionRange": "^3.14.0",
+      "versionRange": "^5.1.6",
       "additionalData": {
         "extraFiles": [
           "src/inline-hook"
@@ -21,38 +48,36 @@
       }
     },
     {
-      "id": "modloader",
-      "versionRange": "=1.2.3",
-      "additionalData": {}
+      "id": "scotland2",
+      "versionRange": "^0.1.4",
+      "additionalData": {
+        "includeQmod": false,
+        "private": true
+      }
     },
     {
-      "id": "custom-types",
-      "versionRange": "^0.15.22",
-      "additionalData": {}
-    },
-    {
-      "id": "codegen",
-      "versionRange": "^0.33.0",
+      "id": "paper",
+      "versionRange": "^3.6.3",
       "additionalData": {}
     },
     {
       "id": "config-utils",
-      "versionRange": "^1.0.1",
+      "versionRange": "^1.4.2",
       "additionalData": {}
     },
     {
-      "id": "questui",
-      "versionRange": "^0.17.11",
+      "id": "bsml",
+      "versionRange": "^0.4.20",
       "additionalData": {}
     },
     {
-      "id": "bs-utils",
-      "versionRange": "^0.7.2",
+      "id": "custom-types",
+      "versionRange": "^0.17.6",
       "additionalData": {}
     },
     {
-      "id": "song-details",
-      "versionRange": "^0.3.1",
+      "id": "bs-cordl",
+      "versionRange": "^3500.*",
       "additionalData": {}
     }
   ],
