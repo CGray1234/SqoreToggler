@@ -1,24 +1,48 @@
 {
-	"_QPVersion": "0.1.1",
-	"name": "Sqore Toggler",
-	"id": "SqoreToggler",
-	"author": "CGray1234",
-	"version": "0.5.0",
-	"packageId": "com.beatgames.beatsaber",
-	"packageVersion": "1.28.0_4124311467",
-	"description": "A simple mod to enable/disable sqore (score) submissions in the menu",
-	"dependencies": [
-		{
-			"version": "^0.7.2",
-			"id": "bs-utils",
-			"downloadIfMissing": "https://github.com/sc2ad/QuestBS-Utils/releases/download/v0.7.2/BS-Utils.qmod"
-		  }
-	],
-	"modFiles": [
-		"libSqoreToggler.so"
-	],
-	"libraryFiles": [
-		"libbeatsaber-hook_3_14_0.so"
-	],
-	"fileCopies": []
+  "_QPVersion": "0.1.1",
+  "name": "Sqore Toggler",
+  "id": "SqoreToggler",
+  "modloader": "Scotland2",
+  "author": "CGray1234",
+  "version": "0.6.0-beta",
+  "packageId": "com.beatgames.beatsaber",
+  "packageVersion": "1.35.0_8016709773",
+  "description": "Enable or disable score submissions at the flip of a switch!",
+  "coverImage": "cover.png",
+  "dependencies": [
+    {
+      "version": "^3.6.3",
+      "id": "paper",
+      "downloadIfMissing": "https://github.com/Fernthedev/paperlog/releases/download/v3.6.3/paperlog.qmod"
+    },
+    {
+      "version": "^0.4.20",
+      "id": "bsml",
+      "downloadIfMissing": "https://github.com/RedBrumbler/Quest-BSML/releases/download/v0.4.24/BSML.qmod"
+    },
+    {
+      "version": "^0.17.6",
+      "id": "custom-types",
+      "downloadIfMissing": "https://github.com/QuestPackageManager/Il2CppQuestTypePatching/releases/download/v0.17.7/CustomTypes.qmod"
+    },
+    {
+      "version": "^0.8.2",
+      "id": "bs-utils",
+      "downloadIfMissing": "https://github.com/RedBrumbler/QuestBS-Utils/releases/download/v0.8.2/BS-Utils.qmod"
+    },
+    {
+      "version": "^0.3.3",
+      "id": "song-details",
+      "downloadIfMissing": "https://github.com/RedBrumbler/SongDetails/releases/download/v0.3.3/SongDetails.qmod"
+    }
+  ],
+  "modFiles": [
+    "libSqoreToggler.so"
+  ],
+  "lateModFiles": [],
+  "libraryFiles": [
+    "libbeatsaber-hook_5_1_6.so"
+  ],
+  "fileCopies": [],
+  "copyExtensions": []
 }

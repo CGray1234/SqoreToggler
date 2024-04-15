@@ -1,6 +1,9 @@
 # Sqore Toggler
 
-A simple mod to enable/disable sqore (score) submissions in the menu
+Enable or disable score submissions at the flip of a switch!
+
+Use `qpm-rust s build` to build
+Same goes for `qpm-rust s copy` and `qpm-rust s qmod`
 
 ## Credits
 
