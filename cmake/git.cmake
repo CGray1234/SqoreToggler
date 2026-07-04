@@ -53,7 +53,8 @@ function(prepare_git_info)
     endif()
 
     if(GIT_EXACT_TAG STREQUAL "")
-        set(GIT_VERSION "${GIT_VERSION}${VERSION_SEPARATOR}${GIT_COMMIT}")
+        # set(GIT_VERSION "${GIT_VERSION}${VERSION_SEPARATOR}${GIT_COMMIT}")
+        set(GIT_VERSION "${GIT_VERSION}")
         set(VERSION_SEPARATOR "-")
     endif()
 
