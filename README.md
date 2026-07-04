@@ -1,3 +1,5 @@
+![SqoreToggler cover](https://raw.githubusercontent.com/CGray1234/SqoreToggler/refs/heads/main/cover.png)
+
 # SqoreToggler
 
 Toggle score submissions with the flip of a switch!
