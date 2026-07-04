@@ -1,0 +1,130 @@
+{
+  "$schema": "https://raw.githubusercontent.com/QuestPackageManager/QPM.Package/refs/heads/main/qpm.schema.json",
+  "version": "0.4.0",
+  "sharedDir": "shared",
+  "dependenciesDir": "extern",
+  "info": {
+    "name": "SqoreToggler",
+    "id": "SqoreToggler",
+    "version": "0.7.0",
+    "url": null,
+    "additionalData": {
+      "overrideSoName": "libSqoreToggler.so",
+      "cmake": true
+    }
+  },
+  "workspace": {
+    "scripts": {
+      "build": [
+        "pwsh ./scripts/build.ps1"
+      ],
+      "clean": [
+        "pwsh ./scripts/build.ps1 -clean"
+      ],
+      "clean-qmod": [
+        "qpm s clean",
+        "qpm s qmod"
+      ],
+      "copy": [
+        "pwsh ./scripts/copy.ps1 $0:?"
+      ],
+      "deepclean": [
+        "pwsh ./scripts/build.ps1 -clean -skipBuild",
+        "qpm clear"
+      ],
+      "logcat": [
+        "pwsh ./scripts/start-logging.ps1"
+      ],
+      "make-hooking": [
+        "pwsh ./common-stuff/scripts/make-hooking.ps1"
+      ],
+      "qmod": [
+        "qpm s build",
+        "qpm s update-version",
+        "qpm qmod zip --skip_build",
+        "qpm s update-version -- -restore"
+      ],
+      "rebuild": [
+        "qpm s deepclean",
+        "qpm s build"
+      ],
+      "rebuild-qmod": [
+        "qpm s deepclean",
+        "qpm s qmod"
+      ],
+      "restart": [
+        "pwsh ./scripts/restart-game.ps1"
+      ],
+      "stack": [
+        "pwsh ./scripts/ndk-stack.ps1"
+      ],
+      "tomb": [
+        "pwsh ./scripts/pull-tombstone.ps1"
+      ],
+      "update-version": [
+        "pwsh ./scripts/update-version.ps1 $0:?"
+      ]
+    },
+    "ndk": "^27.3.13750724",
+    "qmodIncludeDirs": [
+      "./build",
+      "./extern/libs"
+    ],
+    "qmodIncludeFiles": [],
+    "qmodOutput": "./SqoreToggler.qmod"
+  },
+  "dependencies": [
+    {
+      "id": "autohooks",
+      "versionRange": "^0.1.0",
+      "additionalData": {}
+    },
+    {
+      "id": "beatsaber-hook",
+      "versionRange": "^6.4.2",
+      "additionalData": {}
+    },
+    {
+      "id": "bs-cordl",
+      "versionRange": "4008.*",
+      "additionalData": {}
+    },
+    {
+      "id": "mmkay",
+      "versionRange": "^0.2.1",
+      "additionalData": {}
+    },
+    {
+      "id": "paper2_scotland2",
+      "versionRange": "^4.6.4",
+      "additionalData": {}
+    },
+    {
+      "id": "scotland2",
+      "versionRange": "^0.1.6",
+      "additionalData": {
+        "includeQmod": false
+      }
+    },
+    {
+      "id": "config-utils",
+      "versionRange": "^2.0.3",
+      "additionalData": {}
+    },
+    {
+      "id": "bsml",
+      "versionRange": "^0.4.53",
+      "additionalData": {}
+    },
+    {
+      "id": "custom-types",
+      "versionRange": "^0.18.3",
+      "additionalData": {}
+    },
+    {
+      "id": "metacore",
+      "versionRange": "^1.6.3",
+      "additionalData": {}
+    }
+  ]
+}
